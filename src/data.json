@@ -4,16 +4,16 @@
             "id": 1,
             "title": "Dress 1",
             "description": "about dress 1",
-            "price": 19,
-            "availableSizes": ["S", "M", "L","XL"],
+            "price": 20,
+            "availableSizes": ["S", "M","XL"],
             "image": "/images/pexels-godisable-jacob-1537494.jpg"
         },
         {
             "id": 2,
             "title": "Dress 2",
             "description": "about dress 2",
-            "price": 19,
-            "availableSizes": ["S", "M", "L","XL"],
+            "price": 30,
+            "availableSizes": ["M", "L","XL"],
             "image": "/images/pexels-godisable-jacob-859195.jpg"
         },
         {
@@ -21,7 +21,7 @@
             "title": "Dress 3",
             "description": "about dress 3",
             "price": 19,
-            "availableSizes": ["S", "M", "L","XL"],
+            "availableSizes": ["S", "M","XL"],
             "image": "/images/pexels-godisable-jacob-908934.jpg"
         },
         {
@@ -36,8 +36,8 @@
             "id": 5,
             "title": "Dress 5",
             "description": "about dress 5",
-            "price": 19,
-            "availableSizes": ["S", "M", "L","XL"],
+            "price": 40,
+            "availableSizes": ["S", "L","XL"],
             "image": "/images/pexels-godisable-jacob-1936854.jpg"
         },
         {
@@ -45,15 +45,15 @@
             "title": "Dress 6",
             "description": "about dress 6",
             "price": 19,
-            "availableSizes": ["S", "M", "L","XL"],
+            "availableSizes": ["S", "M", "L"],
             "image": "/images/pexels-quang-anh-ha-nguyen-884979.jpg"
         },
         {
             "id": 7,
             "title": "Dress 7",
             "description": "about dress 7",
-            "price": 19,
-            "availableSizes": ["S", "M", "L","XL"],
+            "price": 80,
+            "availableSizes": ["M", "L","XL"],
             "image": "/images/pexels-ricardo-acevedo-1375736.jpg"
         },
         {
@@ -61,22 +61,22 @@
             "title": "Dress 8",
             "description": "about dress 8",
             "price": 19,
-            "availableSizes": ["S", "M", "L","XL"],
+            "availableSizes": ["S", "M", "L"],
             "image": "/images/pexels-samarth-singhai-904117.jpg"
         },
         {
             "id": 9,
             "title": "Dress 9",
             "description": "about dress 9",
-            "price": 19,
-            "availableSizes": ["S", "M", "L","XL"],
+            "price": 38,
+            "availableSizes": ["M", "L","XL"],
             "image": "/images/pexels-pixabay-458669.jpg"
         },
         {
             "id": 10,
             "title": "Dress 10",
             "description": "about dress 10",
-            "price": 19,
+            "price": 100,
             "availableSizes": ["S", "M", "L","XL"],
             "image": "/images/pexels-yuri-manei-2235071.jpg"
         }
