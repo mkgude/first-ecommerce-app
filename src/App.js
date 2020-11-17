@@ -10,19 +10,26 @@ class App extends React.Component {
     super();
     this.state = {
       products: data.products,
-      cartItems: [],
+      cartItems: localStorage.getItem("cartItems")? JSON.parse(localStorage.getItem("cartItems")) : [],
       size: "",
       sort: ""
     }
   }
+  createOrder = (order) => {
+    alert("need to save order for" + order.name)
+  }
   removeFromCart = (product) => {
     const cartItems = this.state.cartItems.slice();
-    this.setState({cartItems: cartItems.filter(x=>x.id !== product.id)})
+    this.setState({cartItems: cartItems.filter(x=>x.id !== product.id)
+    });
+    localStorage.setItem("cartItems", JSON.stringify(this.state.cartItems));
   }
+
+
   addToCart = (product) => {
     const cartItems = this.state.cartItems.slice();
     let alreadyInCart = false;
-    cartItems.forEach(item => {
+    cartItems.forEach((item) => {
       if(item.id === product.id){
         item.count++;
         alreadyInCart = true;
@@ -32,7 +39,10 @@ class App extends React.Component {
       cartItems.push({...product, count: 1});
     }
     this.setState({cartItems})
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }
+
+
   sortProducts = (event) => {
     //imp
     const sort = event.target.value
@@ -69,7 +79,7 @@ class App extends React.Component {
         <main>
           <div className="content">
             <div className="main">
-              <Filter count={this.state.products.length} size={this.state.size} sort={this.state.sort} filterProducts={this.filterProducts} sortProducts={this.sortProducts}></Filter>
+              <Filter count={this.state.products.length} size={this.state.size} sort={this.state.sort} filterProducts={this.filterProducts} sortProducts={this.sortProducts}/>
               <Products products={this.state.products} addToCart={this.addToCart}/>
             </div>
             <div className="sidebar">
