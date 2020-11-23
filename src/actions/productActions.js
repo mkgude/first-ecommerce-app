@@ -41,3 +41,4 @@ export const sortProducts = (filteredProducts, sort) => (dispatch) => {
     }
   })
 }
+

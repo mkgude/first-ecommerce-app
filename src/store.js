@@ -9,7 +9,7 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(combineReducers({
     products: productsReducer,
     cart: cartReducer,
-    order:orderReducer,
+    order: orderReducer,
 }),
 initialState,
 composeEnhancer(applyMiddleware(thunk))
