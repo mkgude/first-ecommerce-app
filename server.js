@@ -2,11 +2,14 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const shortid = require("shortid");
+const cors = require("cors");
 
 require("dotenv").config();
 
 const app = express();
 app.use(bodyParser.json());
+
+app.use(cors());
 
 app.use("/", express.static(__dirname + "/build"));
 app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"));
@@ -15,6 +18,7 @@ mongoose.connect(process.env.MONGODB_URL || process.env.MONGOATLAS, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
+    useFindAndModify: false
 }, (err, res) => {
     if (err) throw err;
 });
@@ -93,8 +97,8 @@ app.delete("/api/orders/:id", async (req, res) => {
   res.send(order);
 });
   
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log("serve at http://localhost:3000"));
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`server at http://localhost:${port}`));
 
 
 
