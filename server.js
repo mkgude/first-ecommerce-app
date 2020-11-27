@@ -7,12 +7,15 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+
 app.use(bodyParser.json());
 
 app.use(cors());
 
-app.use("/", express.static(__dirname + "/build"));
-app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"));
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+  app.use("/", express.static(__dirname + "/build"));
+  app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"));
+}
 
 mongoose.connect(process.env.MONGODB_URL || process.env.MONGOATLAS, {
     useNewUrlParser: true,
@@ -97,7 +100,7 @@ app.delete("/api/orders/:id", async (req, res) => {
   res.send(order);
 });
   
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`server at http://localhost:${port}`));
 
 

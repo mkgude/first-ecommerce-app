@@ -1,6 +1,6 @@
 {
   "name": "first-ecommerce-app",
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:3000",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -29,6 +29,7 @@
   "scripts": {
     "server": "nodemon server.js",
     "start": "react-scripts start",
+    "heroku-postbuild": "npm install && npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
